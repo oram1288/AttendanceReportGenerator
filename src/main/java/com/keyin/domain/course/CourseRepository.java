@@ -1,4 +1,8 @@
 package com.keyin.domain.course;
 
-public interface CourseRepository {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CourseRepository extends CrudRepository<Course, Long> {
 }
