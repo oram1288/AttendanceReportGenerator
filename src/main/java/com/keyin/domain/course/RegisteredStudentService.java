@@ -8,6 +8,10 @@ public class RegisteredStudentService {
     @Autowired
     private RegisteredStudentRepository registeredStudentRepository;
 
+    public RegisteredStudent findByEmailAddress(String emailAddress) {
+        return registeredStudentRepository.findByEmailAddress(emailAddress);
+    }
+
     public RegisteredStudent createRegisteredStudent(RegisteredStudent registeredStudent) {
         return registeredStudentRepository.save(registeredStudent);
     }
