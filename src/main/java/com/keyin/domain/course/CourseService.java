@@ -15,17 +15,7 @@ public class CourseService {
     private RegisteredStudentService registeredStudentService;
 
     public Course createCourse(Course newCourse) {
-        List<RegisteredStudent> studentsForNewCourse = newCourse.getRegisteredStudents();
-
-        for (RegisteredStudent student : studentsForNewCourse) {
-            RegisteredStudent registeredStudentFound = registeredStudentService.findByEmailAddress(student.getEmailAddress());
-
-            if (registeredStudentFound == null) {
-                registeredStudentFound = registeredStudentService.createRegisteredStudent(student);
-            } else {
-                student.setId(registeredStudentFound.getId());
-            }
-        }
+        newCourse.setRegisteredStudents(checkIfExistsOrCreate(newCourse.getRegisteredStudents()));
 
         return courseRepository.save(newCourse);
     }
@@ -38,5 +28,42 @@ public class CourseService {
         Optional<Course> courseOptional = courseRepository.findById(id);
 
         return courseOptional.orElse(null);
+    }
+
+    public Course findCourseByName(String name) {
+        return courseRepository.findByCourseName(name);
+    }
+
+    public Course updateCourse(Course updatedCourse) {
+        Course courseToUpdate = findCourseById(updatedCourse.getId());
+
+        if (courseToUpdate != null) {
+            courseToUpdate.setCourseName(updatedCourse.getCourseName());
+            courseToUpdate.setYear(updatedCourse.getYear());
+            courseToUpdate.setSemester(updatedCourse.getSemester());
+
+            courseToUpdate.setRegisteredStudents(checkIfExistsOrCreate(updatedCourse.getRegisteredStudents()));
+
+            courseRepository.save(courseToUpdate);
+        }
+
+        return courseToUpdate;
+    }
+
+
+    private List<RegisteredStudent> checkIfExistsOrCreate(List<RegisteredStudent> studentsToCheck) {
+        if (studentsToCheck != null) {
+            for (RegisteredStudent student : studentsToCheck) {
+                RegisteredStudent registeredStudentFound = registeredStudentService.findByEmailAddress(student.getEmailAddress());
+
+                if (registeredStudentFound == null) {
+                    registeredStudentFound = registeredStudentService.createRegisteredStudent(student);
+                } else {
+                    student.setId(registeredStudentFound.getId());
+                }
+            }
+        }
+
+        return studentsToCheck;
     }
 }
