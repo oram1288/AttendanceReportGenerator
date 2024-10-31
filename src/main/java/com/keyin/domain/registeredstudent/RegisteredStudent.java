@@ -1,4 +1,4 @@
-package com.keyin.domain.course;
+package com.keyin.domain.registeredstudent;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

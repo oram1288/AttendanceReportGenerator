@@ -1,6 +1,5 @@
-package com.keyin.domain.courseclass;
+package com.keyin.domain.attendingstudent;
 
-import com.keyin.domain.course.RegisteredStudent;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

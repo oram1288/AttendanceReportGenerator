@@ -1,4 +1,4 @@
-package com.keyin.domain.courseclass;
+package com.keyin.domain.attendingstudent;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

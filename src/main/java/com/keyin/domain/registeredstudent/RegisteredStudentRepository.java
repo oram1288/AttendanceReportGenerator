@@ -1,4 +1,4 @@
-package com.keyin.domain.course;
+package com.keyin.domain.registeredstudent;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

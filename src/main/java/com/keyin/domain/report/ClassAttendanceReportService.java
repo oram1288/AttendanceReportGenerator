@@ -1,8 +1,8 @@
 package com.keyin.domain.report;
 
 import com.keyin.domain.course.CourseService;
-import com.keyin.domain.course.RegisteredStudent;
-import com.keyin.domain.courseclass.AttendingStudent;
+import com.keyin.domain.registeredstudent.RegisteredStudent;
+import com.keyin.domain.attendingstudent.AttendingStudent;
 import com.keyin.domain.courseclass.CourseClass;
 import com.keyin.domain.courseclass.CourseClassService;
 import org.springframework.beans.factory.annotation.Autowired;

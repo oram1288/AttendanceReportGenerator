@@ -1,5 +1,6 @@
 package com.keyin.domain.courseclass;
 
+import com.keyin.domain.attendingstudent.AttendingStudent;
 import com.keyin.domain.course.Course;
 import jakarta.persistence.*;
 

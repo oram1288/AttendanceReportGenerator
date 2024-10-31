@@ -1,4 +1,4 @@
-package com.keyin.domain.courseclass;
+package com.keyin.domain.attendingstudent;
 
 public class AttendingStudentController {
 }

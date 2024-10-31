@@ -1,5 +1,6 @@
 package com.keyin.domain.course;
 
+import com.keyin.domain.registeredstudent.RegisteredStudent;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class Course {
     private String semester;
 
     @ManyToMany
+    @OrderBy("name")
     private List<RegisteredStudent> registeredStudents;
 
     public long getId() {

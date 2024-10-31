@@ -1,5 +1,7 @@
 package com.keyin.domain.course;
 
+import com.keyin.domain.registeredstudent.RegisteredStudent;
+import com.keyin.domain.registeredstudent.RegisteredStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

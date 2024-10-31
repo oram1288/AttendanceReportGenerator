@@ -1,8 +1,9 @@
 package com.keyin.domain.courseclass;
 
+import com.keyin.domain.attendingstudent.AttendingStudent;
+import com.keyin.domain.attendingstudent.AttendingStudentService;
 import com.keyin.domain.course.Course;
 import com.keyin.domain.course.CourseService;
-import com.keyin.domain.course.RegisteredStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
